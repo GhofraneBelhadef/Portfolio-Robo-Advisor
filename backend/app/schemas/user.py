@@ -39,6 +39,6 @@ class UserProfileOut(UserProfileIn):
     profil: str            # "conservateur", "modéré", "dynamique"
     risk_score: float      # score numérique interne
     id: int                # identifiant en base
-
+    recommendation: str
     class Config:
         orm_mode = True    # permet de retourner directement un objet SQLAlchemy

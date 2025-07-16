@@ -1,0 +1,15 @@
+FAQ sur les types de profils d'investisseurs et les stratégies associées :
+
+1. Un investisseur **conservateur** cherche avant tout à sécuriser son capital. Il évite les fluctuations importantes et préfère des produits à faible risque, comme les livrets d’épargne, les fonds en euros, ou les obligations d'État. Son objectif principal est la **stabilité et la sécurité**, même si cela implique un rendement limité.
+
+2. Un investisseur **modéré** est prêt à accepter un peu plus de risque en échange d’un rendement potentiel plus élevé. Il opte pour un **portefeuille équilibré**, composé à la fois de produits sûrs (obligations) et de produits plus dynamiques (ETF, actions solides, immobilier). Il vise un compromis entre **sécurité et croissance**.
+
+3. Un investisseur **dynamique** privilégie la **rentabilité élevée**, même si cela implique une **forte volatilité**. Il investit dans des actions de croissance, les technologies innovantes, les start-ups, ou même les crypto-monnaies. Il accepte de possibles pertes à court terme pour maximiser ses gains à long terme.
+
+4. Les **ETF (fonds indiciels cotés)** sont adaptés aux profils modéré et dynamique pour diversifier leur portefeuille tout en gardant un certain contrôle sur les risques.
+
+5. Un portefeuille typique :
+   - Conservateur : 80 % obligations, 20 % produits sécurisés.
+   - Modéré : 50 % actions / ETF, 50 % obligations.
+   - Dynamique : 70 % actions, 20 % ETF, 10 % cash ou produits spéculatifs.
+
