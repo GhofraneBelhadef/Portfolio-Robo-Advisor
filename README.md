@@ -40,9 +40,8 @@ Build a **Robo-Advisor** capable of:
 ---
 
 ## 📦 Dataset
-
-We use the [Plant Village Dataset](https://www.kaggle.com/datasets/arjuntejaswi/plant-village) 🍃 as a placeholder for initial training and testing.  
-In the final product, we integrate live financial APIs like **Yahoo Finance**, **Alpha Vantage**, and **Finnhub** for real-time data.
+ 
+In the final product, we integrate live financial API  **Yahoo Finance** for real-time data.
 
 ---
 
@@ -107,11 +106,3 @@ The frontend for this project is developed using **React** and is available here
 🔗 [LinkedIn](https://linkedin.com/in/ghofrane-belhadef)  
 💻 [GitHub](https://github.com/GhofraneBelhadef)
 
----
-
-## 📎 Recruiter Note
-
-This backend is part of a larger academic and portfolio project that aims to **democratize financial advisory services** using AI.  
-We're combining **machine learning**, **financial optimization**, and **LLMs** to build a tool that’s educational, impactful, and scalable.
-
-Thank you for reviewing this project! 🙏
