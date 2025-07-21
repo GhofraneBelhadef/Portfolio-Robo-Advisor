@@ -1,3 +1,4 @@
-backend/app/database.py/
+backend/app/database.py
 env/
-backend/app/env/
+backend/app/.env
+backend/app/__pycache__/

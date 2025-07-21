@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import Tuple
+from fastapi.middleware.cors import CORSMiddleware
 
 # ⬇️ Importations internes
 from database import Base, engine, SessionLocal
@@ -12,10 +13,26 @@ from services.rag_engine import get_recommendation_for_profile
 # 🚀 Initialisation de l'app FastAPI
 app = FastAPI(title="Robo‑Advisor API", version="0.1.0")
 
-# ⚙️ Création automatique des tables
+origins = [
+    "http://localhost:5173",  # Your React app origin
+    "http://localhost:3000",  # If you also use this in dev
+    "http://127.0.0.1:5173",
+    "http://127.0.0.1:3000",
+    # Add more if needed
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  # or ["*"] for all
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+#  Création automatique des tables
 Base.metadata.create_all(bind=engine)
 
-# 📦 Dépendance pour la base de données
+#  Dépendance pour la base de données
 def get_db():
     db = SessionLocal()
     try:
@@ -23,12 +40,12 @@ def get_db():
     finally:
         db.close()
 
-# 🧪 Endpoint racine pour tester l'API
+#  Endpoint racine pour tester l'API
 @app.get("/")
 def read_root():
     return {"message": "Hello, la base est prête 🐐"}
 
-# 📅 Endpoint principal pour recevoir les données du questionnaire
+#  Endpoint principal pour recevoir les données du questionnaire
 @app.post("/submit_profile", response_model=UserProfileOut)
 def submit_profile(payload: UserProfileIn, db: Session = Depends(get_db)):
     """
