@@ -2,6 +2,8 @@ from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import Tuple
 from fastapi.middleware.cors import CORSMiddleware
+from services.portfolio_engine import generate_initial_portfolio
+from services.portfolio_engine import generate_initial_portfolio, get_assets_for_profile
 
 # ⬇️ Importations internes
 from database import Base, engine, SessionLocal
@@ -61,7 +63,7 @@ def submit_profile(payload: UserProfileIn, db: Session = Depends(get_db)):
         objectif=payload.objectif.value,
         esg_preference=payload.esg_preference
     )
-
+    portfolio_alloc = generate_initial_portfolio(profil)
     # Création de l'utilisateur
     user_db = User(
         age=payload.age,
@@ -77,9 +79,11 @@ def submit_profile(payload: UserProfileIn, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(user_db)
 
+    classes_actifs = get_assets_for_profile(profil)
     # RAG: Génération de la recommandation à partir de documents PDF indexés
     rag_response = get_recommendation_for_profile(profil)
-
+    print(">>> classes_actifs =", classes_actifs)
+    print(">>> portfolio_alloc =", portfolio_alloc)
     return {
         "id": user_db.id,
         "age": user_db.age,
@@ -89,5 +93,7 @@ def submit_profile(payload: UserProfileIn, db: Session = Depends(get_db)):
         "objectif": user_db.objectif,
         "profil": user_db.profil,
         "risk_score": user_db.risk_score,
-        "recommendation": rag_response
+        "classes_actifs": classes_actifs,
+        "recommendation": rag_response,
+        "portfolio_alloc": portfolio_alloc
     }

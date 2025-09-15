@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pandas
+matplotlib
+PyPortfolioOpt
+numpy
+scikit-learn
+yfinance
+langchain-community
+sentence-transformers
+faiss-cpu 
+psycopg2-binary

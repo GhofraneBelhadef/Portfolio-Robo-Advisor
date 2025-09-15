@@ -2,3 +2,4 @@ backend/app/database.py
 env/
 backend/app/.env
 backend/app/__pycache__/
+backend/app/venv/ 

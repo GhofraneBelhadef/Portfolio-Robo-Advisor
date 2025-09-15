@@ -1,6 +1,7 @@
 from enum import Enum
 from typing import Optional
 from pydantic import BaseModel, Field, conint, confloat, validator
+from typing import Dict
 
 
 # ▸ Énumérations pour garantir des valeurs contrôlées
@@ -39,6 +40,9 @@ class UserProfileOut(UserProfileIn):
     profil: str            # "conservateur", "modéré", "dynamique"
     risk_score: float      # score numérique interne
     id: int                # identifiant en base
-    recommendation: str
+    # recommendation: str
+
+    classes_actifs: Optional[Dict[str, float]] = None
+    portfolio_alloc: Optional[Dict[str, float]] = None
     class Config:
         orm_mode = True    # permet de retourner directement un objet SQLAlchemy
