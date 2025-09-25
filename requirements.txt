@@ -10,3 +10,5 @@ langchain-community
 sentence-transformers
 faiss-cpu 
 psycopg2-binary
+reportlab 
+Pillow 
