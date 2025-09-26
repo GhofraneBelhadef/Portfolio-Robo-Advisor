@@ -1,7 +1,8 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
+from sqlalchemy.ext.declarative import declarative_base
 
-DATABASE_URL = "postgresql://postgres:admin@localhost/roboadvisor"
+DATABASE_URL = "postgresql://postgres:admin@localhost/robo-advisor"
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

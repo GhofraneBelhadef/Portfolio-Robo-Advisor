@@ -1,7 +1,8 @@
 from enum import Enum
 from typing import Optional
-from pydantic import BaseModel, Field, conint, confloat, validator
+from pydantic import BaseModel, Field, conint, confloat, validator, EmailStr
 from typing import Dict
+
 
 
 # ▸ Énumérations pour garantir des valeurs contrôlées
@@ -19,6 +20,7 @@ class InvestmentObjective(str, Enum):
 
 # ▸ Modèle reçu depuis le frontend
 class UserProfileIn(BaseModel):
+    email: Optional[EmailStr] = Field(None, description="Adresse email (optionnel)")
     age: conint(ge=18, le=100) = Field(..., description="Âge en années")
     revenu: confloat(gt=0) = Field(..., description="Revenu annuel en euros")
     horizon: conint(gt=0, le=40) = Field(..., description="Durée d’investissement (années)")

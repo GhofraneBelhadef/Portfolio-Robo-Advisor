@@ -12,3 +12,6 @@ faiss-cpu
 psycopg2-binary
 reportlab 
 Pillow 
+sqlalchemy 
+psycopg2-binary
+pydantic[email]
